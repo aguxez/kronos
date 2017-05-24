@@ -1,23 +1,23 @@
-defmodule Kronos.Mixfile do
+defmodule Valvex.Mixfile do
   use Mix.Project
 
   def project do
     [
-      app: :kronos,
+      app: :valvex,
       version: "0.1.0",
       elixir: "~> 1.4",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       deps: deps(),
       description: description(),
-      source_url: "https://github.com/aguxez/kronos",
+      source_url: "https://github.com/aguxez/valvex",
       package: package()
     ]
   end
 
   def application do
     [extra_applications: [:logger, :httpoison, :poison],
-     mod: {Kronos.Application, []}]
+     mod: {Valvex.Application, []}]
   end
 
   defp deps do
@@ -37,9 +37,10 @@ defmodule Kronos.Mixfile do
 
   defp package do
     [
+      name: :valvex,
       maintainers: ["Miguel Diaz"],
       licenses: ["MIT"],
-      links: %{"Github" => "https://github.com/aguxez/kronos"}
+      links: %{"Github" => "https://github.com/aguxez/Valvex"}
     ]
   end
 end

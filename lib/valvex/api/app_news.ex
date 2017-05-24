@@ -1,7 +1,7 @@
-defmodule Kronos.Api.App do
+defmodule Valvex.Api.App do
   @moduledoc false
 
-  alias Kronos.HTTP
+  alias Valvex.HTTP
   alias __MODULE__, as: App
 
   @v "v0002"

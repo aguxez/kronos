@@ -1,4 +1,4 @@
-defmodule Kronos.Application do
+defmodule Valvex.Application do
   @moduledoc false
 
   use Application
@@ -7,10 +7,10 @@ defmodule Kronos.Application do
     import Supervisor.Spec, warn: false
 
     children = [
-      worker(Kronos, [])
+      worker(Valvex, [])
     ]
 
-    opts = [strategy: :one_for_one, name: Kronos.Supervisor]
+    opts = [strategy: :one_for_one, name: Valvex.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end

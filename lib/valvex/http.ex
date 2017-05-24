@@ -1,4 +1,4 @@
-defmodule Kronos.HTTP do
+defmodule Valvex.HTTP do
   @moduledoc false
 
   def get_body(url) do
@@ -7,6 +7,6 @@ defmodule Kronos.HTTP do
   end
 
   def key do
-    Kronos.api_key()
+    Valvex.api_key()
   end
 end

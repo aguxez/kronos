@@ -1,25 +1,25 @@
-# Kronos
+# Valvex
 
-### Kronos is a simple wrapper around the Steam ReST API written in Elixir!
+### Valvex is a simple wrapper around the Steam ReST API written in Elixir!
 
 ## Installation
-First include `kronos` in your `mix.exs`.
+First include `Valvex` in your `mix.exs`.
 
 ```elixir
-{:kronos, "~> 0.1.0"}
+{:valvex, "~> 0.1.0"}
 ```
 
 And make sure that it's initialized before your application:
 
 ```elixir
-[extra_applications: :kronos, ...]
+[extra_applications: :valvex, ...]
 ```
 
 ## Usage
 Remember to set your the token Steam gives you on your `config.exs`.
 
 ```elixir
-config :kronos, token: "your-token"
+config :valvex, token: "your-token"
 ```
 
 Or export the variable name as: `export STEAM_TOKEN="your-token"`.
@@ -27,9 +27,9 @@ Or export the variable name as: `export STEAM_TOKEN="your-token"`.
 Then put it on your Supervision tree or something:
 
 ```elixir
-iex> Kronos.start_link() # If you set the variable before.
+iex> Valvex.start_link() # If you set the variable before.
 
-iex> Kronos.start_link("your-token") # Pass it directly if you didn't set it before.
+iex> Valvex.start_link("your-token") # Pass it directly if you didn't set it before.
 ```
 
 Now start doing your stuff.

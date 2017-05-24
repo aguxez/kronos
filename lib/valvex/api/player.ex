@@ -1,7 +1,7 @@
-defmodule Kronos.Api.Player do
+defmodule Valvex.Api.Player do
   @moduledoc false
 
-  alias Kronos.HTTP
+  alias Valvex.HTTP
 
   @v1 "v0001"
   @v2 "v0002"

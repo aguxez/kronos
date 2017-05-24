@@ -1,7 +1,7 @@
-defmodule KronosTest do
+defmodule ValvexTest do
   use ExUnit.Case
 
-  alias Kronos.Api.{Player, App, GlobalAchievements, Game}
+  alias Valvex.Api.{Player, App, GlobalAchievements, Game}
 
   @steamids ["76561198083075293", "76561198075672583"]
   @steamid ["76561198083075293"]

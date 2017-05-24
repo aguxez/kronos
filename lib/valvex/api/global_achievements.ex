@@ -1,7 +1,7 @@
-defmodule Kronos.Api.GlobalAchievements do
+defmodule Valvex.Api.GlobalAchievements do
   @moduledoc false
 
-  alias Kronos.HTTP
+  alias Valvex.HTTP
 
   @v "v0002"
 

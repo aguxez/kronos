@@ -1,6 +1,6 @@
-defmodule Kronos do
+defmodule Valvex do
   @moduledoc """
-  Kronos is a simple wrapper for the Steam ReST Api
+  Valvex is a simple wrapper for the Steam ReST Api
 
   Before making calls be sure to initialize the client with your Api key provided
   by Steam. Check `start_link/0` for more details.
@@ -8,22 +8,22 @@ defmodule Kronos do
   Every single one of the user ids specified here are 64-bit Steam ids.
   """
 
-  alias Kronos.Api.{Player, App, GlobalAchievements, Game}
+  alias Valvex.Api.{Player, App, GlobalAchievements, Game}
 
   @doc """
   Initializes the client with the api key from your `config.exs` file.
 
-  Set your token as `config :kronos, token: "Your-token"` OR
+  Set your token as `config :valvex, token: "Your-token"` OR
   export the `STEAM_TOKEN` variable: `export STEAM_TOKEN="your-token"`.
 
   ## Example
 
   ```elixir
-  iex> Kronos.start_link()
+  iex> Valvex.start_link()
   ```
   """
   def start_link do
-    start_link(Application.get_env(:kronos, :token, System.get_env("STEAM_TOKEN")))
+    start_link(Application.get_env(:valvex, :token, System.get_env("STEAM_TOKEN")))
   end
 
   @doc """
@@ -32,7 +32,7 @@ defmodule Kronos do
   ## Example
 
   ```elixir
-  iex> Kronos.start_link("your-token")
+  iex> Valvex.start_link("your-token")
   ```
   """
   def start_link(key) do
@@ -52,7 +52,7 @@ defmodule Kronos do
   ## Example
 
   ```elixir
-  iex> Kronos.get_app_news(gameid: 730, count: 3, max_length: 100)
+  iex> Valvex.get_app_news(gameid: 730, count: 3, max_length: 100)
   ```
   """
   def get_app_news([gameid: id, count: count, max_length: m_length]) do
@@ -65,7 +65,7 @@ defmodule Kronos do
   ## Example
 
   ```elixir
-  iex> Kronos.global_achievements(730)
+  iex> Valvex.global_achievements(730)
   ```
   """
   def global_achievements(id) do
@@ -80,9 +80,9 @@ defmodule Kronos do
   ## Examples
 
   ```elixir
-  iex> Kronos.player_summaries(123)
+  iex> Valvex.player_summaries(123)
 
-  iex> Kronos.player_summaries([123, 76561198083075294])
+  iex> Valvex.player_summaries([123, 76561198083075294])
   ```
   """
   def player_summaries(ids) do
@@ -97,7 +97,7 @@ defmodule Kronos do
   ## Example
 
   ```elixir
-  iex> Kronos.friend_list(123)
+  iex> Valvex.friend_list(123)
   ```
   """
   def friend_list(id) do
@@ -110,7 +110,7 @@ defmodule Kronos do
   ## Example
 
   ```elixir
-  iex> Kronos.achievements(steam: 123, gameid: 730)
+  iex> Valvex.achievements(steam: 123, gameid: 730)
   ```
   """
   def achievements([steam: id, gameid: gameid]) do
@@ -123,7 +123,7 @@ defmodule Kronos do
   ## Example
 
   ```elixir
-  iex> Kronos.user_stats(steamid: 123, gameid: 730)
+  iex> Valvex.user_stats(steamid: 123, gameid: 730)
   ```
   """
   def user_stats([steamid: id, gameid: gameid]) do
@@ -136,7 +136,7 @@ defmodule Kronos do
   ## Example
 
   ```elixir
-  iex> Kronos.owned_games(123)
+  iex> Valvex.owned_games(123)
   ```
   """
   def owned_games(id) do
@@ -152,9 +152,9 @@ defmodule Kronos do
   ## Examples
 
   ```elixir
-  iex> Kronos.recently_played(steamid: 123)
+  iex> Valvex.recently_played(steamid: 123)
 
-  iex > Kronos.recently_played(steamid: 123, count: 3)
+  iex > Valvex.recently_played(steamid: 123, count: 3)
   ```
   """
   def recently_played([steamid: id, count: count]) do
@@ -173,7 +173,7 @@ defmodule Kronos do
   ## Example
 
   ```elixir
-  iex> Kronos.shared(steamid: 123, gameid: 730)
+  iex> Valvex.shared(steamid: 123, gameid: 730)
   ```
   """
   def shared([steamid: id, gameid: gameid]) do
@@ -186,9 +186,9 @@ defmodule Kronos do
   ## Examples
 
   ```elixir
-  iex> Kronos.bans(123)
+  iex> Valvex.bans(123)
 
-  iex> Kronos.bans([123, 456, 789])
+  iex> Valvex.bans([123, 456, 789])
   ```
   """
   def bans(ids) do
@@ -201,7 +201,7 @@ defmodule Kronos do
   ## Example
 
   ```elixir
-  iex> Kronos.game_schema(730)
+  iex> Valvex.game_schema(730)
   ```
   """
   def game_schema(gameid) do

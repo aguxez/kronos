@@ -1,7 +1,7 @@
-defmodule Kronos.Api.Game do
+defmodule Valvex.Api.Game do
   @moduledoc false
 
-  alias Kronos.HTTP
+  alias Valvex.HTTP
 
   @v "v2"
 
