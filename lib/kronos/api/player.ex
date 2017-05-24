@@ -13,9 +13,12 @@ defmodule Kronos.Api.Player do
   # Wait for an error to change this?
 
   # Get summary of single or multiple players separated by comma.
-  def summaries(steamids) do
+  def summaries(steamids) when is_list(steamids) do
     ids = Enum.join(steamids, ",")
     HTTP.get_body("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/#{@v2}/?key=#{HTTP.key()}&steamids=#{ids}")
+  end
+  def summaries(steamid) do
+    HTTP.get_body("http://api.steampowered.com/ISteamUser/GetPlayerSummaries/#{@v2}/?key=#{HTTP.key()}&steamids=#{steamid}")
   end
 
   def friend_list(steamid) do
@@ -49,8 +52,11 @@ defmodule Kronos.Api.Player do
   end
 
   # Checks multiple bans for given player or list of players by id.
-  def bans(steamids) do
+  def bans(steamids) when is_list(steamids) do
     ids = Enum.join(steamids, ",")
     HTTP.get_body("http://api.steampowered.com/ISteamUser/GetPlayerBans/#{@v1}/?key=#{HTTP.key()}&steamids=#{ids}")
+  end
+  def bans(id) do
+    HTTP.get_body("http://api.steampowered.com/ISteamUser/GetPlayerBans/#{@v1}/?key=#{HTTP.key()}&steamids=#{id}")
   end
 end
