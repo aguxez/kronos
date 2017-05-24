@@ -2,6 +2,8 @@
 
 ### Valvex is a simple wrapper around the Steam ReST API written in Elixir!
 
+#### Check the [documentation](https://hexdocs.pm/valvex/Valvex.html#content) for the full API reference.
+
 ## Installation
 First include `Valvex` in your `mix.exs`.
 
