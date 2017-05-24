@@ -6,7 +6,6 @@ defmodule Kronos.Api.GlobalAchievements do
   @v "v0002"
 
   def percentages(gameid) do
-    url = "http://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/#{@v}/?gameid=#{gameid}"
-    HTTP.get_body(url)
+    HTTP.get_body("http://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/#{@v}/?gameid=#{gameid}")
   end
 end
