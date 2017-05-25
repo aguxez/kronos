@@ -6,6 +6,11 @@ defmodule ValvexTest do
   @steamids ["76561198083075293", "76561198075672583"]
   @steamid ["76561198083075293"]
 
+  setup_all do
+    Valvex.start_link()
+    :ok
+  end
+
   test "return appnews body on request" do
     req = App.get_app_news(gameid: 440, count: 1, max_length: 100)
 

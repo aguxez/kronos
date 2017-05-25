@@ -4,7 +4,7 @@ defmodule Valvex.Mixfile do
   def project do
     [
       app: :valvex,
-      version: "0.1.0",
+      version: "0.2.0",
       elixir: "~> 1.4",
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
@@ -16,8 +16,7 @@ defmodule Valvex.Mixfile do
   end
 
   def application do
-    [extra_applications: [:logger, :httpoison, :poison],
-     mod: {Valvex.Application, []}]
+    [extra_applications: [:logger, :httpoison, :poison]]
   end
 
   defp deps do
