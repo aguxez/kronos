@@ -16,7 +16,9 @@ defmodule Valvex.Mixfile do
   end
 
   def application do
-    [extra_applications: [:logger, :httpoison, :poison]]
+    [
+      extra_applications: [:logger, :httpoison, :poison, :ex_rated]
+    ]
   end
 
   defp deps do
@@ -24,7 +26,10 @@ defmodule Valvex.Mixfile do
       {:httpoison, "~> 0.11.2"},
       {:poison, "~> 3.1"},
       {:credo, "~> 0.7.4", only: [:dev, :test]},
-      {:ex_doc, "~> 0.15.1", only: [:dev]}
+      {:ex_doc, "~> 0.15.1", only: [:dev]},
+
+      ########
+      {:ex_rated, "~> 1.2"}
     ]
   end
 
