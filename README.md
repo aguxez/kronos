@@ -8,7 +8,7 @@
 First include `Valvex` in your `mix.exs`.
 
 ```elixir
-{:valvex, "~> 0.2.0"}
+{:valvex, "~> 0.3.0"}
 ```
 
 And make sure that it's initialized before your application:
@@ -36,7 +36,7 @@ iex> Valvex.start_link("your-token") # Pass it directly if you didn't set it bef
 
 Now start doing your stuff.
 
-### TODO: 
+### TODO:
 
 1. There's a module that I didn't complete because I honestly didn't understand it and I didn't want to have it half complete, I just didn't even start it.
 
