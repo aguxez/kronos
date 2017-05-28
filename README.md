@@ -36,6 +36,10 @@ iex> Valvex.start_link("your-token") # Pass it directly if you didn't set it bef
 
 Now start doing your stuff.
 
-### TODO: There's a module that I didn't complete because I honestly didn't understand it and I didn't want to have it half complete, I just didn't even start it.
+### TODO: 
+
+1. There's a module that I didn't complete because I honestly didn't understand it and I didn't want to have it half complete, I just didn't even start it.
 
 [This one](https://github.com/aguxez/valvex/blob/master/lib/valvex/api/stats_game.ex) If you're kind and would like to do it I would have absolutely no problem.
+
+2. Add support for IEconService endpoints.
