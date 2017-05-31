@@ -196,6 +196,26 @@ defmodule Valvex do
   end
 
   @doc """
+  Returns inventory of an specific player.
+
+  Options are:
+
+  1. `count`: Number of items to retrieve from the inventory, maximum is 5000.
+  2. `lang`: Language of the description returned.
+
+  ## Examples
+
+  ```elixir
+  iex> Valvex.inventory(user_id, game_id)
+
+  iex> Valvex.inventory(user_id, game_id, count: 500)
+  ```
+  """
+  def inventory(id, gameid, opts \\ []) do
+    Player.inventory(id, gameid, opts)
+  end
+
+  @doc """
   Returns schema for a given game specified by game id.
 
   ## Example

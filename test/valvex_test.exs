@@ -4,7 +4,7 @@ defmodule ValvexTest do
   alias Valvex.Api.{Player, App, GlobalAchievements, Game}
 
   @steamids ["76561198083075293", "76561198075672583"]
-  @steamid ["76561198083075293"]
+  @steamid "76561198083075293"
 
   setup_all do
     Valvex.start_link()
@@ -77,9 +77,16 @@ defmodule ValvexTest do
     assert Map.has_key?(bans, "players") == true
   end
 
+  test "return game inventory of player" do
+    inv = Player.inventory(@steamid, 730, count: 1)
+
+    assert Map.has_key?(inv, "assets") == true
+  end
+
   test "return schema for a given game" do
     game = Game.schema(730) # CS:GO id
 
     assert Map.has_key?(game, "game") == true
   end
+
 end

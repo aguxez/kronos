@@ -59,4 +59,12 @@ defmodule Valvex.Api.Player do
   def bans(id) do
     HTTP.get_body("http://api.steampowered.com/ISteamUser/GetPlayerBans/#{@v1}/?key=#{HTTP.key()}&steamids=#{id}")
   end
+
+  # Gets player inventory
+  def inventory(id, gameid, opts \\ []) do
+    lang = Keyword.get(opts, :lang, "english")
+    count = Keyword.get(opts, :count, 5000)
+
+    HTTP.get_body("http://steamcommunity.com/inventory/#{id}/#{gameid}/2?l=#{lang}&count=#{count}")
+  end
 end
