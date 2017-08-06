@@ -8,7 +8,7 @@
 First include `Valvex` in your `mix.exs`.
 
 ```elixir
-{:valvex, "~> 0.3.0"}
+{:valvex, "~> 0.3.1"}
 ```
 
 And make sure that it's initialized before your application:
